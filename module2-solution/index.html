@@ -16,42 +16,46 @@
       margin-bottom: 15px;
       text-align: center;
     }
-    h3 {
-      text-align: right;
+    
+    .content {
+      position: relative;
+      border: 1px solid black;
+      background-color: #d3d3d3;
+      margin: 10px;
     }
 
     p {
+      position: relative;
       width: 90%;
-      margin: 10px;
-      padding: 10px;
+      margin: 30px;
       font-family: Helvetica;
       color: black;
-      height: 220px;
+    }
+
+    .title {
+      width: 150px;
+      position: absolute;
+      right: 0px;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      text-align: center;
+      font-weight: bold;
+      font-size: 120%;
     }
 
     /* Simple Responsive Framework. */
     .row {
       width: 100%;
     }
+    
+    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
+    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+      float: left;
+      position: relative;
+    }
 
     /********** Desktop view: width 992px and above **********/
     @media (min-width: 992px) {
-      .col-lg-1,
-      .col-lg-2,
-      .col-lg-3,
-      .col-lg-4,
-      .col-lg-5,
-      .col-lg-6,
-      .col-lg-7,
-      .col-lg-8,
-      .col-lg-9,
-      .col-lg-10,
-      .col-lg-11,
-      .col-lg-12 {
-        float: left;
-        border: 1px solid black;
-        background-color: #d3d3d3;
-      }
       .col-lg-1 {
         width: 8.33%;
       }
@@ -92,23 +96,6 @@
 
     /********** Tablet view: width between 768px and 991px, inclusively **********/
     @media (min-width: 768px) and (max-width: 991px) {
-      .col-md-1,
-      .col-md-2,
-      .col-md-3,
-      .col-md-4,
-      .col-md-5,
-      .col-md-6,
-      .col-md-7,
-      .col-md-8,
-      .col-md-9,
-      .col-md-10,
-      .col-md-11,
-      .col-md-12 {
-        float: left;
-        border: 1px solid black;
-        background-color: #d3d3d3;;
-        padding: 10px;
-      }
       .col-md-1 {
         width: 8.33%;
       }
@@ -146,28 +133,22 @@
         width: 100%;
       }
     }
-    
+
     /********** Mobile view: width equal to or less than 767px **********/
     @media (max-width: 767px) {
-      .col-lg-1,
-      .col-lg-2,
-      .col-lg-3,
-      .col-lg-4,
-      .col-lg-5,
-      .col-lg-6,
-      .col-lg-7,
-      .col-lg-8,
-      .col-lg-9,
-      .col-lg-10,
-      .col-lg-11,
-      .col-lg-12 {
-        float: left;
-        border: 1px solid black;
-        background-color: #d3d3d3;
+      .col-md-1,
+      .col-md-2,
+      .col-md-3,
+      .col-md-4,
+      .col-md-5,
+      .col-md-6,
+      .col-md-7,
+      .col-md-8,
+      .col-md-9,
+      .col-md-10,
+      .col-md-11,
+      .col-md-12 {
         width: 100%;
-      }
-      p {
-        height: 120px;
       }
     }
   </style>
@@ -178,16 +159,25 @@
 
   <div class="row">
     <div class="col-lg-4 col-md-6">
-      <h3>Chicken</h3>
-      <p>Spicy jalapeno bacon ipsum dolor amet landjaeger sausage ball tip tri-tip, frankfurter pork chop burgdoggen biltong capicola ribeye ground round doner rump porchetta. Hamburger turkey tenderloin strip steak prosciutto. Ham leberkas biltong ball tip pork chop. Rump corned beef pork spare ribs short loin ham sirloin meatloaf.</p>
+      <div class="content">
+        <div class="title" style="background: #d59898">Chicken</div>
+        <p>Spicy jalapeno bacon ipsum dolor amet landjaeger sausage ball tip tri-tip, frankfurter pork chop burgdoggen biltong capicola ribeye ground round doner rump porchetta. Hamburger turkey tenderloin strip steak prosciutto. Ham leberkas biltong ball tip pork chop. Rump corned beef pork spare ribs short loin ham sirloin meatloaf.</p>
+      </div>
     </div>
     <div class="col-lg-4 col-md-6">
-      <p>Cow biltong tri-tip burgdoggen pastrami turkey t-bone. Porchetta filet mignon boudin jowl landjaeger. Strip steak tail chicken short loin boudin. Ground round frankfurter cow cupim. Burgdoggen ribeye cow hamburger tongue spare ribs short loin shankle prosciutto shoulder. Tenderloin frankfurter sausage t-bone capicola shankle.</p>
+      <div class="content">
+        <div class="title" style="background: #c14543; color: #FFF">Beef</div>
+        <p>Cow biltong tri-tip burgdoggen pastrami turkey t-bone. Porchetta filet mignon boudin jowl landjaeger. Strip steak tail chicken short loin boudin. Ground round frankfurter cow cupim. Burgdoggen ribeye cow hamburger tongue spare ribs short loin shankle prosciutto shoulder. Tenderloin frankfurter sausage t-bone capicola shankle.</p>
+      </div>
     </div>
     <div class="col-lg-4 col-md-12">
-      <p>Meatball chicken turducken shoulder bresaola ham hock, beef bacon short ribs shankle. Hamburger rump kevin cupim pancetta. Hamburger t-bone doner bresaola leberkas ham hock. Shank t-bone burgdoggen capicola venison.</p>
+      <div class="content">
+        <div class="title" style="background: #e5d198">Sushi</div>
+        <p>Meatball chicken turducken shoulder bresaola ham hock, beef bacon short ribs shankle. Hamburger rump kevin cupim pancetta. Hamburger t-bone doner bresaola leberkas ham hock. Shank t-bone burgdoggen capicola venison.</p>
+      </div>
     </div>
   </div>
 
 </body>
+
 </html>
