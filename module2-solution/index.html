@@ -1,216 +1,36 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Responsive Layout</title>
-  <style>
-    /********** Base styles **********/
-
-    * {
-      box-sizing: border-box;
-      font-family: Georgia, Serif;
-    }
-
-    h1 {
-      margin-bottom: 15px;
-      text-align: center;
-      font-size: 175%;
-    }
-    
-    .content {
-      position: relative;
-      border: 1px solid black;
-      background-color: #d3d3d3;
-      margin: 10px;
-    }
-
-    p {
-      position: relative;
-      width: 90%;
-      margin: 2em auto 1em; 
-      font-family: Helvetica;
-      color: black;
-      height: 100px;
-      overflow: hidden;
-      padding: 1em;
-    }
-    p:hover { 
-      overflow: scroll;
-      overflow-x: hidden;
-    }
-
-    .title {
-      width: 150px;
-      position: absolute;
-      right: 0px;
-      border-left: 1px solid black;
-      border-bottom: 1px solid black;
-      text-align: center;
-      font-weight: bold;
-      font-size: 125%;
-      padding: 5px;
-    }
-
-    /* Simple Responsive Framework. */
-    .row {
-      width: 100%;
-    }
-    
-    .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
-    .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-      float: left;
-      position: relative;
-    }
-
-    /********** Desktop view: width 992px and above **********/
-    @media (min-width: 992px) {
-      .col-lg-1 {
-        width: 8.33%;
-      }
-      .col-lg-2 {
-        width: 16.66%;
-      }
-      .col-lg-3 {
-        width: 25%;
-      }
-      .col-lg-4 {
-        width: 33.33%;
-      }
-      .col-lg-5 {
-        width: 41.66%;
-      }
-      .col-lg-6 {
-        width: 50%;
-      }
-      .col-lg-7 {
-        width: 58.33%;
-      }
-      .col-lg-8 {
-        width: 66.66%;
-      }
-      .col-lg-9 {
-        width: 74.99%;
-      }
-      .col-lg-10 {
-        width: 83.33%;
-      }
-      .col-lg-11 {
-        width: 91.66%;
-      }
-      .col-lg-12 {
-        width: 100%;
-      }
-      .categories {
-        display:none;
-      }
-    }
-
-    /********** Tablet view: width between 768px and 991px, inclusively **********/
-    @media (min-width: 768px) and (max-width: 991px) {
-      .col-md-1 {
-        width: 8.33%;
-      }
-      .col-md-2 {
-        width: 16.66%;
-      }
-      .col-md-3 {
-        width: 25%;
-      }
-      .col-md-4 {
-        width: 50%;
-      }
-      .col-md-5 {
-        width: 41.66%;
-      }
-      .col-md-6 {
-        width: 50%;
-      }
-      .col-md-7 {
-        width: 58.33%;
-      }
-      .col-md-8 {
-        width: 66.66%;
-      }
-      .col-md-9 {
-        width: 74.99%;
-      }
-      .col-md-10 {
-        width: 83.33%;
-      }
-      .col-md-11 {
-        width: 91.66%;
-      }
-      .col-md-12 {
-        width: 100%;
-      }
-      .categories {
-        display:none;
-      }
-    }
-
-    /********** Mobile view: width equal to or less than 767px **********/
-    @media (max-width: 767px) {
-      .col-md-1,
-      .col-md-2,
-      .col-md-3,
-      .col-md-4,
-      .col-md-5,
-      .col-md-6,
-      .col-md-7,
-      .col-md-8,
-      .col-md-9,
-      .col-md-10,
-      .col-md-11,
-      .col-md-12 {
-        width: 100%;
-      }
-      .title {
-        display:none;
-      }
-      .categories {
-        font-size: 75%;
-        font-family: monospace;
-        width: 100%;
-        position: absolute;
-        left: 0px;
-        border-bottom: 1px solid black;
-        text-align: center;
-        padding: 5px;
-        margin: 0em auto 1em; 
-      }
-    }
-  </style>
+  <title>Assignment 2</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
   <h1>Our Menu</h1>
 
   <div class="row">
     <div class="col-lg-4 col-md-6">
       <div class="content">
-        <div class="title" style="background: #d59898">Chicken</div>
-        <span class="categories">This is where I would put a description for chicken</span>
+        <div class="title chicken">Chicken</div>
+        <span class="categories chicken">This is where I would put a description for chicken</span>
         <p>Bacon ipsum dolor amet andouille porchetta ribeye drumstick swine. Meatball meatloaf short loin, brisket corned beef sausage leberkas jowl chuck filet mignon pork pastrami. Frankfurter ground round swine ball tip, kevin fatback shankle porchetta. Ham picanha pork chop porchetta brisket filet mignon tenderloin tail salami cow short loin ham hock pork. Short loin pork corned beef capicola. Fatback meatloaf tenderloin, tri-tip prosciutto sausage chuck pork chop bresaola salami porchetta meatball spare ribs tail burgdoggen. Beef turducken shankle boudin, shank chuck cow venison salami tri-tip short loin.</p>
       </div>
     </div>
     <div class="col-lg-4 col-md-6">
       <div class="content">
-        <div class="title" style="background: #c14543; color: #FFF">Beef</div>
-        <div class="categories" style="background: #c14543; color: #FFF">This is where I would put a description for beef</div>
+        <div class="title beef">Beef</div>
+        <div class="categories beef">This is where I would put a description for beef</div>
         <p>Prosciutto cow pork chop, burgdoggen strip steak brisket jowl swine short loin landjaeger. Beef ribs pork pork belly brisket, sirloin pork loin chicken pig. Pork loin kevin spare ribs shoulder short ribs tail meatloaf strip steak turducken cow tri-tip pancetta chuck. Andouille chicken meatloaf pork, salami pork loin strip steak ground round ham rump beef ribs filet mignon. T-bone biltong short loin, boudin turkey jowl kevin bacon rump frankfurter shoulder meatloaf chicken tongue salami. Jowl kielbasa tri-tip bresaola, shoulder alcatra kevin biltong filet mignon pork chop pork belly short loin.</p>
       </div>
     </div>
     <div class="col-lg-4 col-md-12">
       <div class="content">
-        <div class="title" style="background: #e5d198">Sushi</div>
-        <div class="categories">This is where I would put a description for sushi</div>
+        <div class="title sushi">Sushi</div>
+        <div class="categories sushi">This is where I would put a description for sushi</div>
         <p>Pork loin short loin turkey doner prosciutto swine. Shankle alcatra turkey, jerky chicken kielbasa ground round frankfurter. Pork loin alcatra bacon boudin spare ribs swine. Beef ribs chicken tail bacon shoulder capicola spare ribs doner short ribs burgdoggen swine. Meatball doner flank cow, leberkas drumstick biltong andouille fatback short loin filet mignon. Burgdoggen capicola spare ribs prosciutto ribeye ground round.</p>
       </div>
     </div>
   </div>
-
 </body>
-
 </html>
