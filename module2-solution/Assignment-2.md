@@ -44,12 +44,32 @@ Here is what you will need to complete the assignment:
 
 Here is the mockup illustration of the desktop version of the site. Your final result should look very close to this mockup.
 
- ![desktop](images/desktop.png)
+![desktop](images/desktop.png)
 
 Here is the mockup illustration of the tablet version of the site. Your final result should look very close to this mockup. Note that in this view, the 3rd section takes up the entire row.
 
- ![tablet](images/tablet.png)
+![tablet](images/tablet.png)
 
 Here is the mockup illustration of the mobile version of the site. Your final result should look very close to this mockup.
 
- ![mobile](images/mobile.png)
+![mobile](images/mobile.png)
+ 
+## JHU Assignment #2 Extras
+
+Starting assignment numbering from 2 so it’s easier to correlate the assignment number with the module in the course.
+
+Implement all of the Assignment 2 requirements that are posted for regular Coursera students. 
+
+In addition to that, implement the following (still no Bootstrap allowed): 
+
+1. In the mobile view only, the “Menu” title should disappear. Instead, another title with words “Categories” should appear. It should be in a smaller and different family font than the original “Menu” title. It should also be left aligned. It’s left edge should align to the edge of the first content box below. 
+1. Constrain the height of each of the boxes. Place enough content into each box such that the content would NOT fit into that box. The extra content should not be shown in any of the views (desktop, tablet, mobile). However, when the user hovers over the box, the cursor should change to a “resize” type cursor and the user should be able to scroll through the content within the box. Show the vertical scrollbar ONLY when the user hovers over the box. If the user’s mouse leaves the box, the scrollbar should disappear. 
+1. In mobile view only, the titles of each box (Chicken, Sushi, Beef) should fill up the entire width of the box (instead of just to part of it to the right as shown in mockups) and the text in the title box should be centered. It should also consist of 10 different words. (You can come up with your own, say a description of the type of Chicken it is, etc.). Make sure the title does not overlap the content in the box. This setup (together with a normally large enough font) should cause the title not to fit on 1 line. Make sure it wraps properly without overlapping the content of the box while still maintaining the same distance between the title and the beginning of the content in that box.
+
+## Submission
+
+Submit the assignment here on Blackboard with the following information:
+
+1. GitHub.com link to your repository (do NOT share this link or your GitHub username with the class)
+2. GitHub.io link to the deployed solution.
+3. Make sure to check that your deployed assignment works as you intended it to.
