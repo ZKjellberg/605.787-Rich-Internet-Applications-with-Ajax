@@ -5,7 +5,7 @@
     .controller('LunchCheckController', LunchCheckController);
 
   LunchCheckController.$inject = ['$scope'];
-
+  
   function LunchCheckController($scope) {
     $scope.checkIfTooMuch = function() {
       // If user has not entered any value initially, $scope.name will be undefined

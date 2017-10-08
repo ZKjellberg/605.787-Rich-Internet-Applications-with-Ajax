@@ -27,15 +27,18 @@
   </style>
 </head>
 
-<body>
+<body ng-app='ShoppingListCheckOff'>
   <div class="container">
     <h1>Shopping List Check Off</h1>
 
     <div class="row">
 
       <!-- To Buy List -->
-      <div class="col-md-6">
+      <div class="col-md-6" ng-controller='ToBuyController'>
         <h2>To Buy:</h2>
+        <ul>
+          <li ng-repeat="item in shoppingList2">{{$index + 1}}. Buy {{item.quantity}} of {{item.name}}(s)</li>
+        </ul>
         <ul>
           <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
           <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
