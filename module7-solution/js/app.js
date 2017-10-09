@@ -1,40 +1,70 @@
 (function() {
   'use strict';
-  
-  var shoppingList2 = [
-    {
-      name: "Milk",
-      quantity: "2"
-    },
-    {
-      name: "Donuts",
-      quantity: "200"
-    },
-    {
-      name: "Cookies",
-      quantity: "300"
-    },
-    {
-      name: "Chocolate",
-      quantity: "5"
-    }
-  ];
-
 
   angular.module('ShoppingListCheckOff', [])
-    // TODO: Figure out Service
-    // .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
     .controller('ToBuyController', ToBuyController)
-    .controller('AlreadyBoughtController', AlreadyBoughtController);
+    .controller('AlreadyBoughtController', AlreadyBoughtController)
+    .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
-  ToBuyController.$inject = ['$scope'];
-  AlreadyBoughtController.$inject = ['$scope'];
+  ToBuyController.$inject = ['ShoppingListCheckOffService'];
 
-  function ToBuyController($scope) {
-    $scope.shoppingList2 = shoppingList2;
+  function ToBuyController(ShoppingListCheckOffService) {
+    var buyList = this;
+
+    buyList.items = ShoppingListCheckOffService.getBuyItems();
+
+    buyList.boughtItem = function(itemIndex) {
+      ShoppingListCheckOffService.boughtItem(itemIndex);
+    };
   }
 
-  function AlreadyBoughtController($scope) {
+  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+
+  function AlreadyBoughtController(ShoppingListCheckOffService) {
+    var boughtList = this;
+
+    boughtList.items = ShoppingListCheckOffService.getItems();
+  }
+
+  function ShoppingListCheckOffService() {
+    var service = this;
+
+    var buyItems = [{
+        name: "Milk",
+        quantity: "2",
+        pricePerItem: "10"
+      },
+      {
+        name: "Donuts",
+        quantity: "200",
+        pricePerItem: "190"
+      },
+      {
+        name: "Cookies",
+        quantity: "300",
+        pricePerItem: "50"
+      },
+      {
+        name: "Chocolate",
+        quantity: "5",
+        pricePerItem: "15"
+      }
+    ];
+
+    var boughtItems = [];
+
+    service.boughtItem = function(itemIdex) {
+      boughtItems.push(buyItems[itemIdex]);
+      buyItems.splice(itemIdex, 1);
+    };
+
+    service.getBuyItems = function() {
+      return buyItems;
+    };
+
+    service.getItems = function() {
+      return boughtItems;
+    };
 
   }
 
