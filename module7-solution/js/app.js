@@ -4,7 +4,8 @@
   angular.module('ShoppingListCheckOff', [])
     .controller('ToBuyController', ToBuyController)
     .controller('AlreadyBoughtController', AlreadyBoughtController)
-    .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
+    .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+    .filter('truth', TruthFilter);
 
   ToBuyController.$inject = ['ShoppingListCheckOffService'];
 
@@ -18,12 +19,18 @@
     };
   }
 
-  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService', 'truthFilter'];
 
-  function AlreadyBoughtController(ShoppingListCheckOffService) {
+  function AlreadyBoughtController(ShoppingListCheckOffService, truthFilter) {
     var boughtList = this;
 
     boughtList.items = ShoppingListCheckOffService.getItems();
+    
+    boughtList.sayLovesMessage = function () {
+      var msg = "Yaakov likes to eat healthy snacks at night!";
+      msg = truthFilter(msg)
+      return msg;
+    };
   }
 
   function ShoppingListCheckOffService() {
@@ -65,6 +72,14 @@
     service.getItems = function() {
       return boughtItems;
     };
+  }
+  
+  function TruthFilter() {
+    return function (input, target, replace) {
+      input = input || "";
+      input = input.replace(target, replace);
+      return input;
+    }
   }
 
 })();
