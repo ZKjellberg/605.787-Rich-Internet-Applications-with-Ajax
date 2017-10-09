@@ -5,7 +5,7 @@
     .controller('ToBuyController', ToBuyController)
     .controller('AlreadyBoughtController', AlreadyBoughtController)
     .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
-    .filter('truth', TruthFilter);
+    .filter('total', TotalFilter);
 
   ToBuyController.$inject = ['ShoppingListCheckOffService'];
 
@@ -19,17 +19,15 @@
     };
   }
 
-  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService', 'truthFilter'];
+  AlreadyBoughtController.$inject = ['ShoppingListCheckOffService', 'totalFilter'];
 
-  function AlreadyBoughtController(ShoppingListCheckOffService, truthFilter) {
+  function AlreadyBoughtController(ShoppingListCheckOffService, totalFilter) {
     var boughtList = this;
 
     boughtList.items = ShoppingListCheckOffService.getItems();
     
-    boughtList.sayLovesMessage = function () {
-      var msg = "Yaakov likes to eat healthy snacks at night!";
-      msg = truthFilter(msg)
-      return msg;
+    boughtList.getTotal = function () {
+      return totalFilter();
     };
   }
 
@@ -74,10 +72,10 @@
     };
   }
   
-  function TruthFilter() {
-    return function (input, target, replace) {
+  function TotalFilter() {
+    return function (input, quantity, pricePerItem) {
       input = input || "";
-      input = input.replace(target, replace);
+      input = "$$$" + (quantity * pricePerItem);
       return input;
     }
   }

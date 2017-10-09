@@ -51,8 +51,7 @@
         <h2>Already Bought:</h2>
         <ul>
           <li ng-repeat="item in boughtList.items">
-            {{ boughtList.sayLovesMessage() | truth : 'healthy' : 'cookie' }}<br>
-            Bought {{item.quantity}} {{item.name}} for total price of $$${{item.pricePerItem}}.
+            Bought {{item.quantity}} {{item.name}} for total price of {{ boughtList.getTotal() | total : item.quantity : item.pricePerItem }}.
           </li>
         </ul>
         <div ng-if="boughtList.items == 0" class="emptyMessage">Nothing bought yet.</div>
