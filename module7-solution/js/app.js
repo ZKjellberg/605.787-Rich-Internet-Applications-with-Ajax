@@ -65,7 +65,6 @@
     service.getItems = function() {
       return boughtItems;
     };
-
   }
 
 })();

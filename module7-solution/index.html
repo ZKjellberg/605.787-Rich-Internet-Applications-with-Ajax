@@ -42,7 +42,6 @@
             <button ng-click="buyList.boughtItem($index);" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button>
             ({{item.pricePerItem}})
           </li>
-          
         </ul>
         <div ng-if="buyList.items == 0" class="emptyMessage">Everything is bought!</div>
       </div>
@@ -51,7 +50,9 @@
       <div class="col-md-6" ng-controller='AlreadyBoughtController as boughtList'>
         <h2>Already Bought:</h2>
         <ul>
-          <li ng-repeat="item in boughtList.items">Bought {{item.quantity}} {{item.name}}</li>
+          <li ng-repeat="item in boughtList.items">
+            Bought {{item.quantity}} {{item.name}} for total price of $$${{item.pricePerItem}}.
+          </li>
         </ul>
         <div ng-if="boughtList.items == 0" class="emptyMessage">Nothing bought yet.</div>
       </div>
