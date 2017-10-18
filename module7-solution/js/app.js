@@ -75,7 +75,7 @@
   function TotalFilter() {
     return function (input, quantity, pricePerItem) {
       input = input || "";
-      input = "$$$" + (quantity * pricePerItem);
+      input = "$$$" + Number(quantity * pricePerItem).toFixed(2);
       return input;
     }
   }
