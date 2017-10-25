@@ -11,7 +11,7 @@
 
   function ShoppingListDirective() {
     var ddo = {
-      templateUrl: 'shoppingList.html',
+      templateUrl: 'menuList.html',
       scope: {
         items: '<',
         myTitle: '@title',
