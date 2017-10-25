@@ -1,0 +1,9 @@
+<h3>{{ list.myTitle }}</h3>
+<ol>
+  <li ng-repeat="item in list.items">
+    <!-- TODO: Adopt Bootstrap Grid System -->
+    {{ item.name }}, <strong>{{ item.short_name }}</strong>, {{ item.description }}
+    <button ng-click="list.onRemove({index: $index});">Remove Item</button>
+  </li>
+</ol>
+<div class="error" ng-if="list.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>
