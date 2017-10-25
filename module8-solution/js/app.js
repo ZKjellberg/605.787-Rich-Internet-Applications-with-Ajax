@@ -6,7 +6,7 @@
     .service('MenuSearchService', MenuSearchService)
     .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
     // TODO: Replace ShoppingListDirective
-    .directive('shoppingList', ShoppingListDirective);
+    .directive('foundItems', ShoppingListDirective);
 
 
   function ShoppingListDirective() {
@@ -50,7 +50,7 @@
 
     // TODO: This method gets the array
     list.items = menuItems.getItems();
-    var origTitle = "Shopping List";
+    var origTitle = "Matching Menu Items";
     list.title = origTitle + " (" + list.items.length + " items )";
 
     list.itemName = "";
@@ -58,13 +58,13 @@
     list.addItem = function() {
       // TODO: Modify this method to begin the search query
       menuItems.addItem(list.itemName, "E", "This is a test");
-      // list.title = origTitle + " (" + list.items.length + " items )";
+      list.title = origTitle + " (" + list.items.length + " items )";
     };
 
     list.removeItem = function(itemIndex) {
       this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
       menuItems.removeItem(itemIndex);
-      // this.title = origTitle + " (" + list.items.length + " items )";
+      this.title = origTitle + " (" + list.items.length + " items )";
     };
     
     // TODO: Delete me. Sample Input
