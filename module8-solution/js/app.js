@@ -5,7 +5,6 @@
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
     .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
-    // TODO: Replace ShoppingListDirective
     .directive('foundItems', FoundDirective);
 
 
@@ -17,7 +16,7 @@
         myTitle: '@title',
         onRemove: '&'
       },
-      controller: ShoppingListDirectiveController,
+      controller: FoundDirectiveController,
       controllerAs: 'list',
       bindToController: true
     };
@@ -26,7 +25,7 @@
   }
 
 
-  function ShoppingListDirectiveController() {
+  function FoundDirectiveController() {
     var list = this;
 
     list.cookiesInList = function() {
