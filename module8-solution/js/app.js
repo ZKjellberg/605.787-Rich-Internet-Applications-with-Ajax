@@ -12,6 +12,7 @@
     var ddo = {
       templateUrl: 'menuList.html',
       scope: {
+        // TODO: Refactor items -> found
         items: '<',
         myTitle: '@title',
         onRemove: '&'
@@ -47,15 +48,15 @@
 
     var menuItems = MenuSearchService();
 
-    // TODO: This method gets the array
     list.items = menuItems.getItems();
     var origTitle = "Matching Menu Items";
     list.title = origTitle + " (" + list.items.length + " items )";
 
     list.itemName = "";
 
+    // TODO: Refactor for search
     list.addItem = function () {
-      // TODO: Modify this method to begin the search query
+      // TODO: Factor method to use search query parameter and re-use REST code
       menuItems.addItem(list.itemName, "E", "This is a test");
       list.title = origTitle + " (" + list.items.length + " items )";
     };
@@ -72,7 +73,7 @@
     menuItems.addItem("Tested", "C", "Hi");
   }
 
-
+  // TODO: Refactor or remove maxItems
   // If not specified, maxItems assumed unlimited
   function ShoppingListService(maxItems) {
     maxItems = 0;
@@ -96,8 +97,13 @@
       items.splice(itemIndex, 1);
     };
 
-    // TODO: Replace this method
+    // TODO: Delete this method?
     service.getItems = function () {
+      return items;
+    };
+
+    // TODO: Use this method with input to match search parameter
+    service.getMatchedMenuItems = function () {
       return items;
     };
   }
