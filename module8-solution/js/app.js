@@ -46,6 +46,7 @@
   function NarrowItDownController(MenuSearchService) {
     var list = this;
 
+    // TODO: This constructor here is probably issue
     var menuItems = MenuSearchService();
 
     list.items = menuItems.getItems();
