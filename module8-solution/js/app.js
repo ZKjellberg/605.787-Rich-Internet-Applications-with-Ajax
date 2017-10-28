@@ -61,7 +61,7 @@
     };
 
     list.removeItem = function(itemIndex) {
-      this.lastRemoved = "Last item removed was " + this.items[itemIndex].name;
+      this.lastRemoved = "Removed " + this.items[itemIndex].name;
       menuItems.removeItem(itemIndex);
       this.title = origTitle + " (" + list.items.length + " items )";
     };

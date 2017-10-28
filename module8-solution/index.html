@@ -20,7 +20,6 @@
     </div>
     <br>
     <br>
-    <div>{{ list.lastRemoved }}</div>
 
     <!-- found-items should be implemented as a component -->
     <!-- TODO: Rename 'items' to found-items -->
@@ -29,6 +28,8 @@
       title="{{list.title}}"
       on-remove="list.removeItem(index)">
     </found-items>
+
+    <div>{{ list.lastRemoved }}</div>
   </div>
 
   <script src="js/angular.min.js"></script>
