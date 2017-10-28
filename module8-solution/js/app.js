@@ -6,10 +6,10 @@
     .service('MenuSearchService', MenuSearchService)
     .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
     // TODO: Replace ShoppingListDirective
-    .directive('foundItems', ShoppingListDirective);
+    .directive('foundItems', FoundDirective);
 
 
-  function ShoppingListDirective() {
+  function FoundDirective() {
     var ddo = {
       templateUrl: 'menuList.html',
       scope: {
@@ -70,6 +70,7 @@
     // TODO: Delete me. Sample Input
     menuItems.addItem("Tester", "A", "I work");
     menuItems.addItem("Testing", "B", "Woot");
+    menuItems.addItem("Tested", "C", "Hi");
   }
 
 
