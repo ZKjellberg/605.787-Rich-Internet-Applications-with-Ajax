@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular.module('NarrowItDownApp', [])
@@ -28,7 +28,7 @@
   function FoundDirectiveController() {
     var list = this;
 
-    list.cookiesInList = function() {
+    list.cookiesInList = function () {
       for (var i = 0; i < list.items.length; i++) {
         var name = list.items[i].name;
         if (name.toLowerCase().indexOf("cookie") !== -1) {
@@ -54,18 +54,18 @@
 
     list.itemName = "";
 
-    list.addItem = function() {
+    list.addItem = function () {
       // TODO: Modify this method to begin the search query
       menuItems.addItem(list.itemName, "E", "This is a test");
       list.title = origTitle + " (" + list.items.length + " items )";
     };
 
-    list.removeItem = function(itemIndex) {
+    list.removeItem = function (itemIndex) {
       this.lastRemoved = "Removed " + this.items[itemIndex].name;
       menuItems.removeItem(itemIndex);
       this.title = origTitle + " (" + list.items.length + " items )";
     };
-    
+
     // TODO: Delete me. Sample Input
     menuItems.addItem("Tester", "A", "I work");
     menuItems.addItem("Testing", "B", "Woot");
@@ -83,7 +83,7 @@
     // TODO: Prepopulate this method 
 
     // TODO: Constructor still expects second field quantity
-    service.addItem = function(itemName, shortName, descrip) {
+    service.addItem = function (itemName, shortName, descrip) {
       var item = {
         name: itemName,
         short_name: shortName,
@@ -92,18 +92,18 @@
       items.push(item);
     };
 
-    service.removeItem = function(itemIndex) {
+    service.removeItem = function (itemIndex) {
       items.splice(itemIndex, 1);
     };
 
     // TODO: Replace this method
-    service.getItems = function() {
+    service.getItems = function () {
       return items;
     };
   }
 
   function MenuSearchService() {
-    var factory = function(maxItems) {
+    var factory = function (maxItems) {
       return new ShoppingListService(maxItems);
     };
 

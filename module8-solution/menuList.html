@@ -3,7 +3,8 @@
 <ol class="list-group">
   <li ng-repeat="item in list.items" class="list-group-item">
     <!-- TODO: Adopt Bootstrap Grid System -->
-    {{ item.name }}, <strong>{{ item.short_name }}</strong>, {{ item.description }}
+    {{ item.name }},
+    <strong>{{ item.short_name }}</strong>, {{ item.description }}
     <button ng-click="list.onRemove({index: $index});" class="btn btn-danger">Don't want this one!</button>
   </li>
 </ol>
