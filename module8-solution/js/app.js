@@ -38,17 +38,12 @@
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
     var list = this;
+    var origTitle = "Matching Menu Items";
     
     list.items = [];
-
-    // list.items = menuItems.getItems();
-    var origTitle = "Matching Menu Items";
     list.title = "";
-
     list.itemName = "";
 
-    // TODO: Null input, prevent results
-    // TODO: Refactor for search
     list.getMatchedMenuItems = function () {
       var promise = MenuSearchService.getMatchedMenuItems(list.searchTerm);
       promise
@@ -64,47 +59,11 @@
 
     list.removeItem = function (itemIndex) {
       this.lastRemoved = "Removed " + this.items[itemIndex].name;
-      // TODO: Migrate removeItem into Controller
-      // menuItems.removeItem(itemIndex);
-
+      list.items.splice(itemIndex, 1);
+      
       this.title = origTitle + " (" + list.items.length + " items )";
     };
   }
-
-  // TODO: Refactor or remove maxItems
-  // If not specified, maxItems assumed unlimited
-  // function ShoppingListService(maxItems) {
-  //   maxItems = 0;
-  //   var service = this;
-
-  //   // List of shopping items
-  //   var items = [];
-  //   // TODO: Prepopulate this method 
-
-  //   // TODO: Constructor still expects second field quantity
-  //   service.addItem = function (itemName, shortName, descrip) {
-  //     var item = {
-  //       name: itemName,
-  //       short_name: shortName,
-  //       description: descrip
-  //     };
-  //     items.push(item);
-  //   };
-
-  //   service.removeItem = function (itemIndex) {
-  //     items.splice(itemIndex, 1);
-  //   };
-
-  //   // TODO: Delete this method?
-  //   service.getItems = function () {
-  //     return items;
-  //   };
-
-  //   // TODO: Use this method with input to match search parameter
-  //   service.getMatchedMenuItems = function () {
-  //     return items;
-  //   };
-  // }
 
   MenuSearchService.$inject = ['$http', 'ApiBasePath'];
   function MenuSearchService($http, ApiBasePath) {
