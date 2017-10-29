@@ -26,46 +26,40 @@
   function FoundDirectiveController() {
     var list = this;
 
-    // TODO: Fix this method
     list.nothingFound = function () {
-      /*if (list.items.length == 0) {
+      if (list.items.length == 0) {
         return true;
       } else {
         return false;
-      }*/
+      }
     };
   }
 
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
     var list = this;
+    
+    list.items = [];
 
     // list.items = menuItems.getItems();
     var origTitle = "Matching Menu Items";
-    // TODO: Fix this length
-    // list.title = origTitle + " (" + list.items.length + " items )";
+    list.title = "";
 
     list.itemName = "";
 
-    // TODO: Empty list message
     // TODO: Null input, prevent results
-
     // TODO: Refactor for search
-    list.addItem = function () {
-      // TODO: Make searchTerm dynamic, attached to button and user input
-      var searchTerm = list.itemName;
-
-      var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+    list.getMatchedMenuItems = function () {
+      var promise = MenuSearchService.getMatchedMenuItems(list.searchTerm);
       promise
         .then(function (response) {
           list.items = response;
+          console.log(list.items.length);
+          list.title = origTitle + " (" + list.items.length + " items)";
         })
         .catch(function (error) {
           console.log("Something went terribly wrong.");
         });
-
-      // TODO: Length is undefined
-      // list.title = origTitle + " (" + list.items.length + " items )";
     };
 
     list.removeItem = function (itemIndex) {
@@ -73,8 +67,7 @@
       // TODO: Migrate removeItem into Controller
       // menuItems.removeItem(itemIndex);
 
-      // TODO: Length is undefined
-      // this.title = origTitle + " (" + list.items.length + " items )";
+      this.title = origTitle + " (" + list.items.length + " items )";
     };
   }
 
