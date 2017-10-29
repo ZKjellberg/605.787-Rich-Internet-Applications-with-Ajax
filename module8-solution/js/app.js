@@ -62,9 +62,9 @@
     };
 
     // TODO: Delete me. Sample Input
-    // menuItems.addItem("Tester", "A", "I work");
-    // menuItems.addItem("Testing", "B", "Woot");
-    // menuItems.addItem("Tested", "C", "Hi");
+    menuItems.addItem("Tester", "A", "I work");
+    menuItems.addItem("Testing", "B", "Woot");
+    menuItems.addItem("Tested", "C", "Hi");
   }
 
   // TODO: Refactor or remove maxItems

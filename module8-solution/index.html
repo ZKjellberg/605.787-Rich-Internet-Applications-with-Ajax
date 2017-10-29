@@ -11,23 +11,23 @@
 </head>
 
 <body ng-app='NarrowItDownApp'>
-  <div class="container" ng-controller='NarrowItDownController as found'>
+  <div class="container" ng-controller='NarrowItDownController as list'>
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
-      <input ng-model="found.itemName" type="text" placeholder="search term" class="form-control">
+      <input ng-model="list.itemName" type="text" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button ng-click="found.addItem();" class="btn btn-primary">Narrow It Down For Me!</button>
+      <button ng-click="list.addItem();" class="btn btn-primary">Narrow It Down For Me!</button>
     </div>
     <br>
     <br>
 
     <!-- found-items should be implemented as a component -->
-    <found-items items="found.items" title="{{found.title}}" on-remove="found.removeItem(index)">
+    <found-items items="list.items" title="{{list.title}}" on-remove="list.removeItem(index)">
     </found-items>
 
-    <div>{{ found.lastRemoved }}</div>
+    <div>{{ list.lastRemoved }}</div>
   </div>
 
   <script src="js/angular.min.js"></script>
