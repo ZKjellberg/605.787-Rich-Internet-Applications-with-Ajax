@@ -26,12 +26,13 @@
   function FoundDirectiveController() {
     var list = this;
 
+    // TODO: Fix this method
     list.nothingFound = function () {
-      if (list.items.length == 0) {
+      /*if (list.items.length == 0) {
         return true;
       } else {
         return false;
-      }
+      }*/
     };
   }
 
@@ -40,25 +41,46 @@
     var list = this;
 
     // TODO: This constructor here is probably issue
-    var menuItems = MenuSearchService();
+    // var menuItems = MenuSearchService();
 
-    list.items = menuItems.getItems();
+    // list.items = menuItems.getItems();
     var origTitle = "Matching Menu Items";
-    list.title = origTitle + " (" + list.items.length + " items )";
+    // TODO: Fix this length
+    // list.title = origTitle + " (" + list.items.length + " items )";
 
     list.itemName = "";
+    
+    // TODO: Empty list message
+    // TODO: Null input, prevent results
 
     // TODO: Refactor for search
     list.addItem = function () {
+      // TODO: Make searchTerm dynamic, attached to button and user input
+      var searchTerm = list.itemName;
+  
+      var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
+      promise
+        .then(function (response) {
+          list.items = response;
+        })
+        .catch(function (error) {
+          console.log("Something went terribly wrong.");
+        });
+      
+      
       // TODO: Replace with getMatchedMenuItems(list.itemName);
       // menuItems.addItem(list.itemName, "E", "This is a test");
-      list.title = origTitle + " (" + list.items.length + " items )";
+      
+      // TODO: Length is undefined
+      // list.title = origTitle + " (" + list.items.length + " items )";
     };
 
     list.removeItem = function (itemIndex) {
       this.lastRemoved = "Removed " + this.items[itemIndex].name;
-      menuItems.removeItem(itemIndex);
-      this.title = origTitle + " (" + list.items.length + " items )";
+      // TODO: Migrate removeItem into Controller
+      // menuItems.removeItem(itemIndex);
+      // TODO: Length is undefined
+      // this.title = origTitle + " (" + list.items.length + " items )";
     };
 
     // TODO: Delete me. Sample Input
@@ -69,45 +91,69 @@
 
   // TODO: Refactor or remove maxItems
   // If not specified, maxItems assumed unlimited
-  function ShoppingListService(maxItems) {
-    maxItems = 0;
+  // function ShoppingListService(maxItems) {
+  //   maxItems = 0;
+  //   var service = this;
+
+  //   // List of shopping items
+  //   var items = [];
+  //   // TODO: Prepopulate this method 
+
+  //   // TODO: Constructor still expects second field quantity
+  //   service.addItem = function (itemName, shortName, descrip) {
+  //     var item = {
+  //       name: itemName,
+  //       short_name: shortName,
+  //       description: descrip
+  //     };
+  //     items.push(item);
+  //   };
+
+  //   service.removeItem = function (itemIndex) {
+  //     items.splice(itemIndex, 1);
+  //   };
+
+  //   // TODO: Delete this method?
+  //   service.getItems = function () {
+  //     return items;
+  //   };
+
+  //   // TODO: Use this method with input to match search parameter
+  //   service.getMatchedMenuItems = function () {
+  //     return items;
+  //   };
+  // }
+
+  // function MenuSearchService() {
+  //   var factory = function (maxItems) {
+  //     return new ShoppingListService(maxItems);
+  //   };
+
+  //   return factory;
+  // }
+  
+  MenuSearchService.$inject = ['$http', 'ApiBasePath'];
+  function MenuSearchService($http, ApiBasePath) {
     var service = this;
 
-    // List of shopping items
-    var items = [];
-    // TODO: Prepopulate this method 
+    service.getMatchedMenuItems = function (searchTerm) {
+      return $http({
+        method: "GET",
+        url: (ApiBasePath + "/menu_items.json")
+      })
+        .then(function (response) {
+          var foundItems = response.data.menu_items;
 
-    // TODO: Constructor still expects second field quantity
-    service.addItem = function (itemName, shortName, descrip) {
-      var item = {
-        name: itemName,
-        short_name: shortName,
-        description: descrip
-      };
-      items.push(item);
+          foundItems = foundItems.filter(function (foundItems) {
+            return foundItems.description.includes(searchTerm)
+          });
+
+          return foundItems;
+        })
+        .catch(function (error) {
+          console.log("Something went terribly wrong.");
+        });
     };
-
-    service.removeItem = function (itemIndex) {
-      items.splice(itemIndex, 1);
-    };
-
-    // TODO: Delete this method?
-    service.getItems = function () {
-      return items;
-    };
-
-    // TODO: Use this method with input to match search parameter
-    service.getMatchedMenuItems = function () {
-      return items;
-    };
-  }
-
-  function MenuSearchService() {
-    var factory = function (maxItems) {
-      return new ShoppingListService(maxItems);
-    };
-
-    return factory;
   }
 
 })();
