@@ -11,7 +11,7 @@
     var ddo = {
       templateUrl: 'menuList.html',
       scope: {
-        items: '<',
+        found: '<',
         myTitle: '@title',
         onRemove: '&'
       },
@@ -27,8 +27,8 @@
     var list = this;
 
     list.nothingFound = function () {
-      if (list.items != null) {
-        if (list.items.length == 0) {
+      if (list.found != null) {
+        if (list.found.length == 0) {
           return true;
         } else {
           return false;
@@ -51,8 +51,8 @@
       var promise = MenuSearchService.getMatchedMenuItems(list.searchTerm);
       promise
         .then(function (response) {
-          list.items = response;
-          list.title = origTitle + " (" + list.items.length + " items)";
+          list.found = response;
+          list.title = origTitle + " (" + list.found.length + " items)";
         })
         .catch(function (error) {
           console.log("Something went terribly wrong in Controller.");
@@ -60,9 +60,9 @@
     };
 
     list.removeItem = function (itemIndex) {
-      this.lastRemoved = "Removed " + this.items[itemIndex].name;
-      list.items.splice(itemIndex, 1);
-      this.title = origTitle + " (" + list.items.length + " items )";
+      this.lastRemoved = "Removed " + this.found[itemIndex].name;
+      list.found.splice(itemIndex, 1);
+      this.title = origTitle + " (" + list.found.length + " items )";
     };
   }
 
