@@ -7,12 +7,10 @@
     .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
     .directive('foundItems', FoundDirective);
 
-
   function FoundDirective() {
     var ddo = {
       templateUrl: 'menuList.html',
       scope: {
-        // TODO: Refactor items -> found
         items: '<',
         myTitle: '@title',
         onRemove: '&'
@@ -25,11 +23,9 @@
     return ddo;
   }
 
-
   function FoundDirectiveController() {
     var list = this;
 
-    // TODO: Empty List
     list.nothingFound = function () {
       if (list.items.length == 0) {
         return true;
@@ -39,8 +35,6 @@
     };
   }
 
-
-  // Replace both constructor inptus with a proper service
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
     var list = this;
