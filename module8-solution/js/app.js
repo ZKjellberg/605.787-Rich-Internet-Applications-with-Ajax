@@ -67,10 +67,6 @@
           console.log("Something went terribly wrong.");
         });
       
-      
-      // TODO: Replace with getMatchedMenuItems(list.itemName);
-      // menuItems.addItem(list.itemName, "E", "This is a test");
-      
       // TODO: Length is undefined
       // list.title = origTitle + " (" + list.items.length + " items )";
     };
@@ -79,14 +75,10 @@
       this.lastRemoved = "Removed " + this.items[itemIndex].name;
       // TODO: Migrate removeItem into Controller
       // menuItems.removeItem(itemIndex);
+      
       // TODO: Length is undefined
       // this.title = origTitle + " (" + list.items.length + " items )";
     };
-
-    // TODO: Delete me. Sample Input
-    // menuItems.addItem("Tester", "A", "I work");
-    // menuItems.addItem("Testing", "B", "Woot");
-    // menuItems.addItem("Tested", "C", "Hi");
   }
 
   // TODO: Refactor or remove maxItems
@@ -122,14 +114,6 @@
   //   service.getMatchedMenuItems = function () {
   //     return items;
   //   };
-  // }
-
-  // function MenuSearchService() {
-  //   var factory = function (maxItems) {
-  //     return new ShoppingListService(maxItems);
-  //   };
-
-  //   return factory;
   // }
   
   MenuSearchService.$inject = ['$http', 'ApiBasePath'];
