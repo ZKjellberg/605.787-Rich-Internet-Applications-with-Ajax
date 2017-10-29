@@ -29,14 +29,13 @@
   function FoundDirectiveController() {
     var list = this;
 
-    list.cookiesInList = function () {
-      for (var i = 0; i < list.items.length; i++) {
-        var name = list.items[i].name;
-        if (name.toLowerCase().indexOf("cookie") !== -1) {
-          return true;
-        }
+    // TODO: Empty List
+    list.nothingFound = function () {
+      if (list.items.length == 0) {
+        return true;
+      } else {
+        return false;
       }
-      return false;
     };
   }
 
@@ -69,9 +68,9 @@
     };
 
     // TODO: Delete me. Sample Input
-    menuItems.addItem("Tester", "A", "I work");
-    menuItems.addItem("Testing", "B", "Woot");
-    menuItems.addItem("Tested", "C", "Hi");
+    // menuItems.addItem("Tester", "A", "I work");
+    // menuItems.addItem("Testing", "B", "Woot");
+    // menuItems.addItem("Tested", "C", "Hi");
   }
 
   // TODO: Refactor or remove maxItems
