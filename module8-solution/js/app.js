@@ -43,7 +43,7 @@
   function NarrowItDownController(MenuSearchService) {
     var list = this;
     var origTitle = "Matching Menu Items";
-    
+
     list.title = "";
     list.itemName = "";
 
