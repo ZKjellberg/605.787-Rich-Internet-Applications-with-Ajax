@@ -49,7 +49,7 @@
     // list.title = origTitle + " (" + list.items.length + " items )";
 
     list.itemName = "";
-    
+
     // TODO: Empty list message
     // TODO: Null input, prevent results
 
@@ -57,7 +57,7 @@
     list.addItem = function () {
       // TODO: Make searchTerm dynamic, attached to button and user input
       var searchTerm = list.itemName;
-  
+
       var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
       promise
         .then(function (response) {
@@ -66,7 +66,7 @@
         .catch(function (error) {
           console.log("Something went terribly wrong.");
         });
-      
+
       // TODO: Length is undefined
       // list.title = origTitle + " (" + list.items.length + " items )";
     };
@@ -75,7 +75,7 @@
       this.lastRemoved = "Removed " + this.items[itemIndex].name;
       // TODO: Migrate removeItem into Controller
       // menuItems.removeItem(itemIndex);
-      
+
       // TODO: Length is undefined
       // this.title = origTitle + " (" + list.items.length + " items )";
     };
@@ -115,7 +115,7 @@
   //     return items;
   //   };
   // }
-  
+
   MenuSearchService.$inject = ['$http', 'ApiBasePath'];
   function MenuSearchService($http, ApiBasePath) {
     var service = this;
