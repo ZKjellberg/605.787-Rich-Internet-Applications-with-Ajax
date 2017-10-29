@@ -2,10 +2,12 @@
 <h3>{{ list.myTitle }}</h3>
 <ol class="list-group">
   <li ng-repeat="item in list.items" class="list-group-item">
-    {{ item.name }},
-    <strong>{{ item.short_name }}</strong>, {{ item.description }}
-    <br>
-    <button ng-click="list.onRemove({index: $index});" class="btn btn-danger">Don't want this one!</button>
+    <h3>
+      <strong>{{ item.short_name }}</strong>
+      {{ item.name }}
+    </h3>
+    <div class="well">{{ item.description }}</div>
+    <button ng-click="list.onRemove({index: $index});" class="btn btn-lg btn-danger">Don't want this one!</button>
   </li>
 </ol>
 <h2 class="text-danger" ng-if="list.nothingFound()">Nothing Found</h2>

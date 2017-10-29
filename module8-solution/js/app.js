@@ -52,7 +52,6 @@
       promise
         .then(function (response) {
           list.items = response;
-          console.log(list.items.length);
           list.title = origTitle + " (" + list.items.length + " items)";
         })
         .catch(function (error) {
@@ -63,7 +62,6 @@
     list.removeItem = function (itemIndex) {
       this.lastRemoved = "Removed " + this.items[itemIndex].name;
       list.items.splice(itemIndex, 1);
-      
       this.title = origTitle + " (" + list.items.length + " items )";
     };
   }
