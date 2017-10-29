@@ -27,8 +27,12 @@
     var list = this;
 
     list.nothingFound = function () {
-      if (list.items.length == 0) {
-        return true;
+      if (list.items != null) {
+        if (list.items.length == 0) {
+          return true;
+        } else {
+          return false;
+        }
       } else {
         return false;
       }
@@ -40,7 +44,6 @@
     var list = this;
     var origTitle = "Matching Menu Items";
     
-    list.items = [];
     list.title = "";
     list.itemName = "";
 
