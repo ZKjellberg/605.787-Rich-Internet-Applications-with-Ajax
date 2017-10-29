@@ -53,7 +53,7 @@
           list.title = origTitle + " (" + list.items.length + " items)";
         })
         .catch(function (error) {
-          console.log("Something went terribly wrong.");
+          console.log("Something went terribly wrong in Controller.");
         });
     };
 
@@ -84,7 +84,7 @@
           return foundItems;
         })
         .catch(function (error) {
-          console.log("Something went terribly wrong.");
+          console.log("Something went terribly wrong in Service.");
         });
     };
   }
