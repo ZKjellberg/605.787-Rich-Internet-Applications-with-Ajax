@@ -50,8 +50,8 @@
 
     // TODO: Refactor for search
     list.addItem = function () {
-      // TODO: Factor method to use search query parameter and re-use REST code
-      menuItems.addItem(list.itemName, "E", "This is a test");
+      // TODO: Replace with getMatchedMenuItems(list.itemName);
+      // menuItems.addItem(list.itemName, "E", "This is a test");
       list.title = origTitle + " (" + list.items.length + " items )";
     };
 
@@ -62,9 +62,9 @@
     };
 
     // TODO: Delete me. Sample Input
-    menuItems.addItem("Tester", "A", "I work");
-    menuItems.addItem("Testing", "B", "Woot");
-    menuItems.addItem("Tested", "C", "Hi");
+    // menuItems.addItem("Tester", "A", "I work");
+    // menuItems.addItem("Testing", "B", "Woot");
+    // menuItems.addItem("Tested", "C", "Hi");
   }
 
   // TODO: Refactor or remove maxItems
