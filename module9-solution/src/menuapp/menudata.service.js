@@ -8,7 +8,7 @@ MenuDataService.$inject = ['$q', '$timeout']
 function MenuDataService($q, $timeout) {
   var service = this;
 
-  // List of shopping items
+  // List of items
   var items = [];
 
   // Pre-populate a no cookie list
