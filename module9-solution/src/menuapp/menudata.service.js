@@ -38,7 +38,8 @@ function MenuDataService($q, $timeout) {
     description: "4 large tofu cubes, breaded and deep-fried, with garlic sauce on the side"
   });
 
-  // TODO: Replace this method with a REST call to categories.json - See Lecture25
+  // TODO: Replace this method with a REST call
+  // Lecture 25 - https://davids-restaurant.herokuapp.com/categories.json
   service.getAllCategories = function () {
     var deferred = $q.defer();
 
@@ -51,7 +52,9 @@ function MenuDataService($q, $timeout) {
     return deferred.promise;
   };
   
-  // TODO: service.getItemsForCategory(categoryShortName) - See Module8
+  // TODO: Replace this method with a REST call
+  // Module 8 - https://davids-restaurant.herokuapp.com/menu_items.json?category=
+  // TODO: Add 'categoryShortName' to method input like service.getItemsForCategory(categoryShortName)
   service.getItemsForCategory = function () {
     var deferred = $q.defer();
 
