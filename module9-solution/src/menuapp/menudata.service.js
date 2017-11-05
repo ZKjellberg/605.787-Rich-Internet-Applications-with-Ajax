@@ -10,8 +10,6 @@ function MenuDataService($q, $timeout) {
 
   // List of categories
   var categories = [];
-
-  // Pre-populate a no cookie list
   categories.push({
     short_name: "DS",
     name: "Desserts",
@@ -24,26 +22,9 @@ function MenuDataService($q, $timeout) {
     short_name: "SR",
     name: "Sushi Menu",
   });
-
-  // Simulates call to server
-  // Returns a promise, NOT items array directly
-  // TODO: Replace this method with a REST call to categories.json
-  service.getAllCategories = function () {
-    var deferred = $q.defer();
-
-    // Wait 2 seconds before returning
-    $timeout(function () {
-      // deferred.reject(items);
-      deferred.resolve(categories);
-    }, 800);
-
-    return deferred.promise;
-  };
   
-  // List of items
+    // List of items
   var items = [];
-
-  // Pre-populate a no cookie list
   items.push({
     name: "Hot and Sour Soup",
     description: "tofu, chicken, mushroom, bamboo shoot, and egg"
@@ -56,8 +37,21 @@ function MenuDataService($q, $timeout) {
     name: "Fried Silky Tofu with Special Garlic Sauce",
     description: "4 large tofu cubes, breaded and deep-fried, with garlic sauce on the side"
   });
+
+  // TODO: Replace this method with a REST call to categories.json - See Lecture25
+  service.getAllCategories = function () {
+    var deferred = $q.defer();
+
+    // Wait 2 seconds before returning
+    $timeout(function () {
+      // deferred.reject(items);
+      deferred.resolve(categories);
+    }, 800);
+
+    return deferred.promise;
+  };
   
-  // TODO: service.getItemsForCategory(categoryShortName)
+  // TODO: service.getItemsForCategory(categoryShortName) - See Module8
   service.getItemsForCategory = function () {
     var deferred = $q.defer();
 
