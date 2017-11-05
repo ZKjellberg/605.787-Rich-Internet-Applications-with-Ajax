@@ -2,11 +2,11 @@
 'use strict';
 
 angular.module('MenuApp')
-.service('ShoppingListService', ShoppingListService);
+.service('MenuDataService', MenuDataService);
 
 
-ShoppingListService.$inject = ['$q', '$timeout']
-function ShoppingListService($q, $timeout) {
+MenuDataService.$inject = ['$q', '$timeout']
+function MenuDataService($q, $timeout) {
   var service = this;
 
   // List of shopping items
