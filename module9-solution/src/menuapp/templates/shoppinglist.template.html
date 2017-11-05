@@ -1,6 +1,5 @@
-<ul>
-  <li ng-repeat="item in $ctrl.items"
-      ui-sref="itemDetail({itemId: $index})">
-    {{ item.quantity }} of {{ item.name }}
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in $ctrl.items" ui-sref="itemDetail({itemId: $index})">
+    <a href="#">{{ item.quantity }} of {{ item.name }}</a>
   </li>
 </ul>
