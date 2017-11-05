@@ -30,7 +30,8 @@ function MenuDataService($q, $timeout) {
 
   // Simulates call to server
   // Returns a promise, NOT items array directly
-  service.getItems = function () {
+  // TODO: Replace this method with a REST call to categories.json
+  service.getAllCategories = function () {
     var deferred = $q.defer();
 
     // Wait 2 seconds before returning
@@ -41,6 +42,8 @@ function MenuDataService($q, $timeout) {
 
     return deferred.promise;
   };
+  
+  // TODO: service.getItemsForCategory(categoryShortName)
 }
 
 })();
