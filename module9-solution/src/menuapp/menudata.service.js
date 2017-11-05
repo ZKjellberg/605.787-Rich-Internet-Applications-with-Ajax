@@ -8,24 +8,21 @@ MenuDataService.$inject = ['$q', '$timeout']
 function MenuDataService($q, $timeout) {
   var service = this;
 
-  // List of items
-  var items = [];
+  // List of categories
+  var categories = [];
 
   // Pre-populate a no cookie list
-  items.push({
-    short_name: "S",
-    name: "Sugar",
-    description: "Sugar used for baking delicious umm... baked goods."
+  categories.push({
+    short_name: "DS",
+    name: "Desserts",
   });
-  items.push({
-    short_name: "F",
-    name: "flour",
-    description: "High quality wheat flour. Mix it with water, sugar, 2 raw eggs."
+  categories.push({
+    short_name: "D",
+    name: "Dinner Combo",
   });
-  items.push({
-    short_name: "C",
-    name: "Chocolate Chips",
-    description: "Put these in the dough. No reason, really. Gotta store them somewhere!"
+  categories.push({
+    short_name: "SR",
+    name: "Sushi Menu",
   });
 
   // Simulates call to server
@@ -37,13 +34,42 @@ function MenuDataService($q, $timeout) {
     // Wait 2 seconds before returning
     $timeout(function () {
       // deferred.reject(items);
+      deferred.resolve(categories);
+    }, 800);
+
+    return deferred.promise;
+  };
+  
+  // List of items
+  var items = [];
+
+  // Pre-populate a no cookie list
+  items.push({
+    name: "Hot and Sour Soup",
+    description: "tofu, chicken, mushroom, bamboo shoot, and egg"
+  });
+  items.push({
+    name: "Garden Vegetable Soup with Tofu",
+    description: "clear chicken broth with mixed vegetables (carrots, cabbage, baby corn, mushroom, snow peas)"
+  });
+  items.push({
+    name: "Fried Silky Tofu with Special Garlic Sauce",
+    description: "4 large tofu cubes, breaded and deep-fried, with garlic sauce on the side"
+  });
+  
+  // TODO: service.getItemsForCategory(categoryShortName)
+  service.getItemsForCategory = function () {
+    var deferred = $q.defer();
+
+    // Wait 2 seconds before returning
+    $timeout(function () {
+      // deferred.reject(items);
       deferred.resolve(items);
     }, 800);
 
     return deferred.promise;
   };
   
-  // TODO: service.getItemsForCategory(categoryShortName)
 }
 
 })();

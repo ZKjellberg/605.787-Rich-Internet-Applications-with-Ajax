@@ -5,10 +5,10 @@ angular.module('MenuApp')
 .controller('MainCategoriesController', MainCategoriesController);
 
 
-MainCategoriesController.$inject = ['items'];
-function MainCategoriesController(items) {
+MainCategoriesController.$inject = ['categories'];
+function MainCategoriesController(categories) {
   var mainList = this;
-  mainList.items = items;
+  mainList.categories = categories;
 }
 
 })();

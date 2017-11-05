@@ -25,14 +25,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     templateUrl: 'src/menuapp/templates/main-categories.template.html',
     controller: 'MainCategoriesController as mainList',
     resolve: {
-      items: ['MenuDataService', function (MenuDataService) {
+      categories: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
       }]
     }
   })
 
-  // TODO: Replace {itemID} with a query for that specific item
-  // Use Service method - getItemsForCategory(categoryShortName)
   .state('itemDetail', {
     url: '/items/{itemId}',
     templateUrl: 'src/menuapp/templates/item-detail.template.html',
@@ -40,7 +38,9 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     resolve: {
       item: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
-              return MenuDataService.getAllCategories()
+              // TODO: Replace {itemID} with a query for that specific item
+              // Use Service method - getItemsForCategory(categoryShortName)
+              return MenuDataService.getItemsForCategory()
                 .then(function (items) {
                   return items[$stateParams.itemId];
                 });
