@@ -13,14 +13,17 @@ function MenuDataService($q, $timeout) {
 
   // Pre-populate a no cookie list
   items.push({
+    short_name: "S",
     name: "Sugar",
     description: "Sugar used for baking delicious umm... baked goods."
   });
   items.push({
+    short_name: "F",
     name: "flour",
     description: "High quality wheat flour. Mix it with water, sugar, 2 raw eggs."
   });
   items.push({
+    short_name: "C",
     name: "Chocolate Chips",
     description: "Put these in the dough. No reason, really. Gotta store them somewhere!"
   });
