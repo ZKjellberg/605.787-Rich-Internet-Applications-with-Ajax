@@ -1,23 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 9</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon' />
+  </head>
+  <body>
+    <h1>Welcome to Premade No Cookie Shopping List</h1>
 
-<head>
-  <meta charset="utf-8">
-  <title>Assignment 9</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel='icon' href='favicon.ico' type='image/x-icon' />
-</head>
+    <ui-view></ui-view>
 
-<body ng-app='MenuApp'>
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
 
-  <!-- Libraries -->
-  <script src="lib/angular.min.js"></script>
-  <script src="lib/angular-ui-router.min.js"></script>
+    <!-- Modules -->
+    <script src="src/menuapp/menuapp.module.js"></script>
 
-  <!-- Modules -->
-  <script src="src/menuapp.module.js"></script>
-</body>
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
 
+    <!-- 'MenuApp' module artifacts -->
+    <script src="src/menuapp/shoppinglist.component.js"></script>
+    <script src="src/menuapp/main-shoppinglist.controller.js"></script>
+    <script src="src/menuapp/shoppinglist.service.js"></script>
+    <script src="src/menuapp/item-detail.controller.js"></script>
+
+  </body>
 </html>
