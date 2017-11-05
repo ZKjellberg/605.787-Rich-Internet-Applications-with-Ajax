@@ -8,8 +8,8 @@ angular.module('MenuApp')
 ItemDetailController.$inject = ['item']
 function ItemDetailController(item) {
   var itemDetail = this;
+  itemDetail.short_name = item.short_name;
   itemDetail.name = item.name;
-  itemDetail.quantity = item.quantity;
   itemDetail.description = item.description;
 }
 
