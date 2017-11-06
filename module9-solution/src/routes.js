@@ -33,15 +33,14 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   .state('itemsList', {
     url: '/items/{itemId}',
-    templateUrl: 'src/menuapp/templates/item-detail.template.html',
-    controller: 'ItemDetailController as itemDetail',
+    templateUrl: 'src/menuapp/templates/main-items.template.html',
+    controller: 'MainItemsController as itemList',
     resolve: {
-      item: ['$stateParams', 'MenuDataService',
+      items: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
               return MenuDataService.getItemsForCategory($stateParams.itemId)
                 .then(function (items) {
-                  // TODO: Switch to full array to process
-                  return items[0];
+                  return items;
                 });
             }]
     }
