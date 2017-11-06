@@ -17,13 +17,12 @@ function MenuDataService($http, $q, $timeout) {
     });
   };
   
-  // service.getItemsForCategory = function (categoryShortName) {
-  service.getItemsForCategory = function () {
+  service.getItemsForCategory = function (categoryShortName) {
     return $http({
       method: "GET",
       url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),
       params: {
-        category: "L"
+        category: categoryShortName
       }
     }).then(function (response) {
       return response.data.menu_items;

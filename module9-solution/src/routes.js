@@ -38,11 +38,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     resolve: {
       item: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
-              console.log($stateParams.itemId);
-              // TODO: Use $stateParams.itemId for getItemsForCategory()
-              return MenuDataService.getItemsForCategory()
+              return MenuDataService.getItemsForCategory($stateParams.itemId)
                 .then(function (items) {
-                  return items[$stateParams.itemId];
+                  // TODO: Switch to full array to process
+                  return items[0];
                 });
             }]
     }

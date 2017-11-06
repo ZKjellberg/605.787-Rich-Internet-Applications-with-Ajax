@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="category in $ctrl.categories" ui-sref="itemDetail({itemId: $index})">
-    <a href="#"><strong>({{category.short_name}})</strong> {{ category.name }}</a>
+  <li class="list-group-item" ng-repeat="category in $ctrl.categories">
+    <a href="#" ui-sref="itemDetail({itemId: category.short_name})"><strong>({{category.short_name}})</strong> {{ category.name }}</a>
   </li>
 </ul>
