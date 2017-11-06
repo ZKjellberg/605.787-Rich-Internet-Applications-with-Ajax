@@ -17,11 +17,8 @@ function MenuDataService($http, $q, $timeout) {
     });
   };
   
-  // TODO: Add 'categoryShortName' to method input like service.getItemsForCategory(categoryShortName)
-  // service.getMenuForCategory = function (categoryShortName) {
+  // service.getItemsForCategory = function (categoryShortName) {
   service.getItemsForCategory = function () {
-    var shortName = "L";
-    
     return $http({
       method: "GET",
       url: ("https://davids-restaurant.herokuapp.com/menu_items.json"),

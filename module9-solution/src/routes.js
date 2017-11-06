@@ -38,8 +38,8 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     resolve: {
       item: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
-              // TODO: Replace {itemID} with a query for that specific item
-              // Use Service method - getItemsForCategory(categoryShortName)
+              console.log($stateParams.itemId);
+              // TODO: Use $stateParams.itemId for getItemsForCategory()
               return MenuDataService.getItemsForCategory()
                 .then(function (items) {
                   return items[$stateParams.itemId];
