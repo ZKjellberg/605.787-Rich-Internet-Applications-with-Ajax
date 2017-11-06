@@ -20,10 +20,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Category list page
-  .state('mainList', {
+  .state('categoryList', {
     url: '/categories',
     templateUrl: 'src/menuapp/templates/main-categories.template.html',
-    controller: 'MainCategoriesController as mainList',
+    controller: 'MainCategoriesController as categoryList',
     resolve: {
       categories: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories();
