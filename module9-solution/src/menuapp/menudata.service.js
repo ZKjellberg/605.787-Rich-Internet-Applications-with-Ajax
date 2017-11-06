@@ -29,7 +29,6 @@ function MenuDataService($http, $q, $timeout) {
         category: "L"
       }
     }).then(function (response) {
-      console.log(response.data.menu_items)
       return response.data.menu_items;
     });
   };
