@@ -4,8 +4,8 @@
 angular.module('MenuApp')
 .service('MenuDataService', MenuDataService);
 
-MenuDataService.$inject = ['$http', '$q', '$timeout']
-function MenuDataService($http, $q, $timeout) {
+MenuDataService.$inject = ['$http']
+function MenuDataService($http) {
   var service = this;
 
   service.getAllCategories = function () {
