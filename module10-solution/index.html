@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/restaurant.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel='icon' href='favicon.ico' type='image/x-icon' />
   </head>
   <body ng-app="restaurant" ng-strict-di>
 
@@ -48,15 +49,18 @@
               </li>
               <li id="navMenuButton" ui-sref-active="active">
                 <a ui-sref="public.menu">
-                  <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
+                  <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu
+                </a>
               </li>
               <li>
-                <a href="#">
-                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
+                <a ui-sref="public.user">
+                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info
+                </a>
               </li>
-              <li ui-sref="public.register">
-                <a href="#">
-                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
+              <li>
+                <a ui-sref="public.register">
+                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up
+                </a>
               </li>
               <li id="phone" class="hidden-xs">
                 <a href="tel:410-602-5008">

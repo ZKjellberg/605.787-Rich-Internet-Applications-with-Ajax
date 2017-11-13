@@ -52,7 +52,12 @@
             return MenuService.getCategories();
           }]
         }
-      });
+      })
+      .state('public.user', {
+        url: '/user',
+        templateUrl: 'src/public/user/user.html'
+      })
+      ;
   }
 
 })();
