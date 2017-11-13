@@ -125,12 +125,12 @@
           Form valid? {{ regForm.$valid }}
         </div>
       </div>
+      
+      <div id="info" ng-if="registerCtrl.completed" class="text-center">
+        First Name: {{ registerCtrl.user.first_name}} <br> Last Name: {{ registerCtrl.user.last_name}} <br> Email: {{ registerCtrl.user.email}} <br> Phone: {{ registerCtrl.user.phone }}
+      </div>
     </fieldset>
   </form>
-
-  <div id="info" ng-if="registerCtrl.completed">
-    First Name: {{ registerCtrl.user.first_name}} <br> Last Name: {{ registerCtrl.user.last_name}} <br> Email: {{ registerCtrl.user.email}} <br> Phone: {{ registerCtrl.user.phone }}
-  </div>
 
   <br>
   <div class="bg-primary img-rounded">
