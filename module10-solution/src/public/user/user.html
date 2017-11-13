@@ -2,8 +2,36 @@
   <div class="bg-primary img-rounded">
     <h2 class="text-center">My Information</h2>
     
-    <div style="padding:20px">
-      Sample user fields here
+    <div class="text-center" style="padding:20px">
+      First Name: <br>
+      Last Name: <br>
+      E-Mail: <br>
+      Phone #: <br>
+      Menu Number:
+      
+      <!-- TODO: Add statement to show only if user data is not available -->
+      <h2>
+        <a ui-sref="public.register" style="color:#FFF; text-decoration: underline;">
+          Not Signed Up Yet. Sign up Now!
+        </a>
+      </h2>
     </div>
   </div>
+  
+  <br>
+  <!-- TODO: Display their favorite item -->
+  <!-- Display the title, description, & picture of their favorite menu item-->
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="menu-item-photo">
+        <div class="ng-binding">L1</div>
+        <img class="img-responsive" width="250" height="150" ng-src="images/menu/A/A.jpg">
+      </div>
+    </div>
+    <div class="menu-item-description col-sm-7">
+      <h3 class="menu-item-title ng-binding">Orange Chicken</h3>
+      <p class="menu-item-details ng-binding">chunks of chicken, breaded and deep-fried with sauce containing orange peels; white meat by request: for pint $1 extra, for large $2 extra</p>
+    </div>
+  </div>
+
 </div>
