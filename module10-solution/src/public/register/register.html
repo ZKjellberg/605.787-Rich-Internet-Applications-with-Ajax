@@ -94,11 +94,11 @@
       
       <!-- Menu Number -->
       <div class="form-group">
-        <label class="col-md-3 control-label">Menu Number</label>
+        <label class="col-md-3 control-label">Favorite Menu Item</label>
         <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-ice-lolly-tasted"></i></span>
-            <input name="menu_number" placeholder="Menu Number" class="form-control" type="text" ng-model="registerCtrl.user.menu_number" required>
+            <input name="menu_number" placeholder="A12" class="form-control" type="text" ng-model="registerCtrl.user.menu_number" required>
           </div>
         </div>
         
@@ -127,7 +127,10 @@
       </div>
       
       <div id="info" ng-if="registerCtrl.completed" class="text-center">
-        First Name: {{ registerCtrl.user.first_name}} <br> Last Name: {{ registerCtrl.user.last_name}} <br> Email: {{ registerCtrl.user.email}} <br> Phone: {{ registerCtrl.user.phone }}
+        First Name: {{ registerCtrl.user.first_name}}<br>
+        Last Name: {{ registerCtrl.user.last_name}}<br>
+        Email: {{ registerCtrl.user.email}}<br>
+        Phone: {{ registerCtrl.user.phone }}
       </div>
     </fieldset>
   </form>
