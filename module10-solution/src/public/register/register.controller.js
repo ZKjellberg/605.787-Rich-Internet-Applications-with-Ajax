@@ -4,10 +4,10 @@
 angular.module('public')
 .controller('RegisterController', RegisterController);
 
-RegisterController.$inject = ['menuCategories'];
-function RegisterController(menuCategories) {
+RegisterController.$inject = ['menuFavorite'];
+function RegisterController(menuFavorite) {
   var $ctrl = this;
-  $ctrl.menuCategories = menuCategories
+  $ctrl.menuFavorite = menuFavorite
   
   // Trying to move Controller
   $ctrl.submit = function() {

@@ -28,6 +28,12 @@
       });
     };
 
+    service.getFavorite = function() {
+      return $http.get(ApiPath + '/menu_items/A11.json').then(function(response) {
+        return response.data;
+      });
+    };
+
   }
 
 

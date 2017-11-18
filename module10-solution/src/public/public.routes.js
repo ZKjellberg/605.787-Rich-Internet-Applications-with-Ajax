@@ -48,8 +48,8 @@
         controller: 'RegisterController',
         controllerAs: 'registerCtrl',
         resolve: {
-          menuCategories: ['MenuService', function(MenuService) {
-            return MenuService.getCategories();
+          menuFavorite: ['MenuService', function(MenuService) {
+            return MenuService.getFavorite();
           }]
         }
       })
