@@ -28,8 +28,13 @@
       });
     };
 
-    service.getFavorite = function() {
-      return $http.get(ApiPath + '/menu_items/A11.json').then(function(response) {
+    service.getFavorite = function(favorite) {
+      if (favorite) {
+        console.log("Favorite received " + favorite);
+      } else {
+        favorite = "A11";
+      }
+      return $http.get(ApiPath + '/menu_items/' + favorite + '.json').then(function(response) {
         return response.data;
       });
     };
