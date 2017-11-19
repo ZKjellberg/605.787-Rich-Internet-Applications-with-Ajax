@@ -47,11 +47,6 @@
         templateUrl: 'src/public/register/register.html',
         controller: 'RegisterController',
         controllerAs: 'registerCtrl',
-        resolve: {
-          menuFavorite: ['MenuService', function(MenuService) {
-            return MenuService.getFavorite();
-          }]
-        }
       })
       .state('public.user', {
         url: '/user',
