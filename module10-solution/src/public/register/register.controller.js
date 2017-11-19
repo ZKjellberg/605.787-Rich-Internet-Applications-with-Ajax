@@ -16,6 +16,12 @@ function RegisterController(MenuService) {
    'menu_number' : ''
   }
   
+  // TODO: Migrate to user.html
+  // var temp = MenuService.getUser();
+  // if (temp !== null) {
+  //   $ctrl.user = temp;
+  // }
+
   // Trying to move Controller
   $ctrl.submit = function() {
     $ctrl.savedUser = angular.copy($ctrl.user);
@@ -27,6 +33,8 @@ function RegisterController(MenuService) {
 
         $ctrl.completed = true;
         $ctrl.failed = false;
+
+        MenuService.saveUser($ctrl.savedUser);
       })
       .catch(function(e) {
         $ctrl.completed = false;
