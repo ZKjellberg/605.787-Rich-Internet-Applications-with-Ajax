@@ -1,37 +1,33 @@
 <div class="container">
   <div class="bg-primary img-rounded">
-    <h2 class="text-center">My Information</h2>
-    
-    <div class="text-center" style="padding:20px">
-      First Name: <br>
-      Last Name: <br>
-      E-Mail: <br>
-      Phone #: <br>
-      Menu Number:
+    <div class="col-md-6 col-md-offset-3">
+      <div ng-if="userCtrl.exists">
+        <h2>User Information</h2>
+        First Name: {{ userCtrl.user.first_name}}<br>
+        Last Name: {{ userCtrl.user.last_name}}<br>
+        Email: {{ userCtrl.user.email}}<br>
+        Phone: {{ userCtrl.user.phone }}<br>
+        
+        <h3>Menu Favorite</h3>
+        <div class="col-md-4">
+          <div class="menu-item-photo">
+            <div>{{userCtrl.menuFavorite.short_name}}</div>
+            <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{userCtrl.menuFavorite.category_short_name}}/{{userCtrl.menuFavorite.category_short_name}}.jpg" alt="{{userCtrl.menuFavorite.name}}">
+          </div>
+        </div>
+        <div class="menu-item-description col-md-7">
+          <h3 class="menu-item-title">{{userCtrl.menuFavorite.name}}</h3>
+          <p class="menu-item-details">{{userCtrl.menuFavorite.description}}</p>
+        </div>
+      </div>
       
-      <!-- TODO: Add statement to show only if user data is not available -->
-      <h2>
-        <a ui-sref="public.register" style="color:#FFF; text-decoration: underline;">
-          Not Signed Up Yet. Sign up Now!
-        </a>
-      </h2>
-    </div>
-  </div>
-  
-  <br>
-  <!-- TODO: Display their favorite item -->
-  <!-- Display the title, description, & picture of their favorite menu item-->
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="menu-item-photo">
-        <div class="ng-binding">L1</div>
-        <img class="img-responsive" width="250" height="150" ng-src="images/menu/A/A.jpg">
+      <div ng-if="userCtrl.failed">
+        <h2>
+          <a ui-sref="public.register" style="color:#FFF; text-decoration: underline;">
+            Not Signed Up Yet. Sign up Now!
+          </a>
+        </h2>
       </div>
     </div>
-    <div class="menu-item-description col-sm-7">
-      <h3 class="menu-item-title ng-binding">Orange Chicken</h3>
-      <p class="menu-item-details ng-binding">chunks of chicken, breaded and deep-fried with sauce containing orange peels; white meat by request: for pint $1 extra, for large $2 extra</p>
-    </div>
   </div>
-
 </div>

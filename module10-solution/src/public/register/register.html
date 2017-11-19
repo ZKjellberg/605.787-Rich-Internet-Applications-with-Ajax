@@ -119,23 +119,26 @@
         </div>
       </fieldset>
     </form>
-        
-    <!-- Valid Form? -->
-    <div class="form-group">
-      <label class="col-md-3 control-label"></label>
-      <div class="col-md-4">
-        Form valid? {{ regForm.$valid }}
-      </div>
-    </div>
-    
+
     <div id="info" ng-if="registerCtrl.completed" class="col-md-6 col-md-offset-3">
       <h3>Registration Successful!</h3>
-      <h2>Your information has been saved</h2>
+      <h2>Your information has been saved.</h2>
       First Name: {{ registerCtrl.savedUser.first_name}}<br>
       Last Name: {{ registerCtrl.savedUser.last_name}}<br>
       Email: {{ registerCtrl.savedUser.email}}<br>
       Phone: {{ registerCtrl.savedUser.phone }}<br>
-      Menu Favorite: ({{registerCtrl.savedUser.menu_number}}) {{registerCtrl.menuFavorite.name}}
+
+      <h3>Menu Favorite</h3>
+        <div class="col-md-4">
+          <div class="menu-item-photo">
+            <div>{{registerCtrl.menuFavorite.short_name}}</div>
+            <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{registerCtrl.menuFavorite.category_short_name}}/{{registerCtrl.menuFavorite.category_short_name}}.jpg" alt="{{registerCtrl.menuFavorite.name}}">
+          </div>
+        </div>
+        <div class="menu-item-description col-md-7">
+          <h3 class="menu-item-title">{{registerCtrl.menuFavorite.name}}</h3>
+          <p class="menu-item-details">{{registerCtrl.menuFavorite.description}}</p>
+        </div>
     </div>
 
     <div id="info" ng-if="registerCtrl.failed" class="col-md-4 col-md-offset-3">

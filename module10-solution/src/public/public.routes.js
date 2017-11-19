@@ -50,7 +50,9 @@
       })
       .state('public.user', {
         url: '/user',
-        templateUrl: 'src/public/user/user.html'
+        templateUrl: 'src/public/user/user.html',
+        controller: 'UserController',
+        controllerAs: 'userCtrl'
       })
       ;
   }

@@ -35,7 +35,7 @@
         });
     };
 
-    var savedUser;
+    var savedUser = undefined;
 
     service.saveUser = function(user) {
       savedUser = user;

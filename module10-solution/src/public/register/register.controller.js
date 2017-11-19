@@ -15,12 +15,6 @@ function RegisterController(MenuService) {
    'phone' : '',
    'menu_number' : ''
   }
-  
-  // TODO: Migrate to user.html
-  // var temp = MenuService.getUser();
-  // if (temp !== null) {
-  //   $ctrl.user = temp;
-  // }
 
   // Trying to move Controller
   $ctrl.submit = function() {
