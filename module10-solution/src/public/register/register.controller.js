@@ -13,7 +13,8 @@ function RegisterController(menuFavorite) {
   
   // Trying to move Controller
   $ctrl.submit = function() {
-    $ctrl.completed = true;
+    $ctrl.completed = false;
+    $ctrl.failed = true;
   };
 }
 
