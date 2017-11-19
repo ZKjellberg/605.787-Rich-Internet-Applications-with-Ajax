@@ -99,7 +99,8 @@
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-ice-lolly-tasted"></i></span>
               <input name="menu_number" placeholder="A10" class="form-control" type="text"
-                ng-model="registerCtrl.user.menu_number" ng-change="registerCtrl.favoriteExists()" required>
+                ng-model="registerCtrl.user.menu_number" ng-change="registerCtrl.favoriteExists()"
+                ng-model-options="{debounce: 1000}" required>
             </div>
           </div>
           

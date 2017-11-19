@@ -15,14 +15,15 @@ describe('menucategories', function () {
   });
 
   it('should return favorite item', function() {
-    $httpBackend.whenGET(ApiPath + '/categories.json').respond(['Lunch', 'Dessert']);
-    menuFavorite.getCategories()
+    $httpBackend.whenGET(ApiPath + '/menu_items/' + 'A10' + '.json')
+      .respond({id: 10, short_name: "A10"});
+
+    menuFavorite.getFavorite("A10")
       .then(function(response) {
-        console.log(response);
-        expect(response).toEqual(['Lunch', 'Dessert']);
+        expect(response)
+          .toEqual({id: 10, short_name: "A10"});
       }
     );
     $httpBackend.flush();
   });
-
 });
