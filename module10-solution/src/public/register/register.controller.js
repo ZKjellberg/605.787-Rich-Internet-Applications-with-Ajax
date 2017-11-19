@@ -10,8 +10,6 @@ function RegisterController(menuFavorite) {
   $ctrl.menuFavorite = menuFavorite
   
   console.log(menuFavorite);
-  console.log(menuFavorite.name);
-  console.log(menuFavorite.description);
   
   // Trying to move Controller
   $ctrl.submit = function() {
