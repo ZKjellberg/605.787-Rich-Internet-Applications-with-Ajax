@@ -21,7 +21,7 @@ function RegisterController(MenuService) {
     $ctrl.savedUser = angular.copy($ctrl.user);
 
     // TODO: Make getFavorite dynamic. Remove historical code
-    MenuService.getFavorite($ctrl.user.menu_number)
+    MenuService.getFavorite($ctrl.savedUser.menu_number)
       .then(function(response) {
         $ctrl.menuFavorite = response;
 
@@ -35,6 +35,16 @@ function RegisterController(MenuService) {
         $ctrl.failed = true;
       });
   };
+
+  $ctrl.favoriteExists = function() {
+    MenuService.getFavorite($ctrl.user.menu_number)
+      .then(function(response) {
+        $ctrl.exists = false;
+      })
+      .catch(function(e) {
+        $ctrl.exists = true;
+      });
+  }
 }
 
 

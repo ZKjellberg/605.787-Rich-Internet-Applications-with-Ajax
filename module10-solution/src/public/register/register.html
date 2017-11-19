@@ -98,14 +98,17 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-ice-lolly-tasted"></i></span>
-              <input name="menu_number" placeholder="A10" class="form-control" type="text" ng-model="registerCtrl.user.menu_number" required>
+              <input name="menu_number" placeholder="A10" class="form-control" type="text"
+                ng-model="registerCtrl.user.menu_number" ng-change="registerCtrl.favoriteExists()" required>
             </div>
           </div>
           
           <!-- Error Messages -->
           <div class="col-md-5">
             <div>
-              <!-- TODO --->
+              <span ng-if="registerCtrl.exists">
+                No such menu number exists.
+              </span>
             </div>
           </div>
         </div>
