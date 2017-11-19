@@ -98,7 +98,7 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-ice-lolly-tasted"></i></span>
-              <input name="menu_number" placeholder="A12" class="form-control" type="text" ng-model="registerCtrl.user.menu_number" required>
+              <input name="menu_number" placeholder="A10" class="form-control" type="text" ng-model="registerCtrl.user.menu_number" required>
             </div>
           </div>
           
@@ -130,6 +130,7 @@
     
     <div id="info" ng-if="registerCtrl.completed" class="col-md-6 col-md-offset-3">
       <h3>Registration Successful!</h3>
+      <h2>Your information has been saved</h2>
       First Name: {{ registerCtrl.savedUser.first_name}}<br>
       Last Name: {{ registerCtrl.savedUser.last_name}}<br>
       Email: {{ registerCtrl.savedUser.email}}<br>
