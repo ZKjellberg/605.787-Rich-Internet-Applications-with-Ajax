@@ -25,15 +25,12 @@ function RegisterController(MenuService) {
       .then(function(response) {
         $ctrl.menuFavorite = response;
 
-        // Sample Success vs Fail display
-        // TODO: How to detect error from service
-        // if () {
-          $ctrl.completed = true;
-          $ctrl.failed = false;
-        // } else {
-        //   $ctrl.completed = false;
-        //   $ctrl.failed = true;
-        // }
+        $ctrl.completed = true;
+        $ctrl.failed = false;
+      })
+      .catch(function(e) {
+        $ctrl.completed = false;
+        $ctrl.failed = true;
       });
   };
 }
