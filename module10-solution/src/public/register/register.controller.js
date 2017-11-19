@@ -7,14 +7,26 @@ angular.module('public')
 RegisterController.$inject = ['menuFavorite'];
 function RegisterController(menuFavorite) {
   var $ctrl = this;
-  $ctrl.menuFavorite = menuFavorite
+  $ctrl.menuFavorite = menuFavorite;
   
-  console.log(menuFavorite);
+  $ctrl.user = {
+   'first_name' : '',
+   'last_name' : '',
+   'email' : '',
+   'phone' : '',
+   'menu_number' : ''
+  }
   
   // Trying to move Controller
   $ctrl.submit = function() {
-    $ctrl.completed = false;
-    $ctrl.failed = true;
+    // Sample Success vs Fail display
+    if ($ctrl.user.menu_number == "A12") {
+      $ctrl.completed = true;
+      $ctrl.failed = false;
+    } else {
+      $ctrl.completed = false;
+      $ctrl.failed = true;
+    }
   };
 }
 
